@@ -16,6 +16,8 @@
         resources = [
         ],
         scripts = [
+            "lib/Chart.min.js",
+            "lib/jquery.min.js"
         ],
         symbols = {
             "stage": {
@@ -75,20 +77,20 @@
                             fill: ['rgba(33,31,31,1.00)']
                         },
                         {
-                            transform: [[], [], [], ['0.6', '0.6']],
                             rect: ['191', '396px', '133', '105', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Boot_Animation',
                             symbolName: 'Boot_Animation',
                             opacity: '1',
-                            type: 'rect'
+                            transform: [[], [], [], ['0.6', '0.6']]
                         },
                         {
-                            transform: [[], [], [], ['1.4', '1.4']],
                             rect: ['0px', '0px', '516', '649', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'System',
                             symbolName: 'System',
                             opacity: '0',
-                            type: 'rect'
+                            transform: [[], [], [], ['1.4', '1.4']]
                         }
                     ],
                     style: {
@@ -117,14 +119,14 @@
                             '0px'
                         ],
                         [
-                            "eid37",
+                            "eid26",
                             "scaleY",
                             5000,
                             1000,
                             "easeInOutQuad",
-                            "${System}",
-                            '1.4',
-                            '1'
+                            "${Boot_Animation}",
+                            '1',
+                            '0.6'
                         ],
                         [
                             "eid25",
@@ -147,13 +149,13 @@
                             '0px'
                         ],
                         [
-                            "eid31",
-                            "opacity",
+                            "eid37",
+                            "scaleY",
                             5000,
                             1000,
                             "easeInOutQuad",
                             "${System}",
-                            '0.000000',
+                            '1.4',
                             '1'
                         ],
                         [
@@ -177,14 +179,14 @@
                             '0'
                         ],
                         [
-                            "eid26",
-                            "scaleY",
+                            "eid31",
+                            "opacity",
                             5000,
                             1000,
                             "easeInOutQuad",
-                            "${Boot_Animation}",
-                            '1',
-                            '0.6'
+                            "${System}",
+                            '0.000000',
+                            '1'
                         ]
                     ]
                 }
@@ -199,9 +201,9 @@
                 content: {
                     dom: [
                         {
-                            type: 'image',
-                            id: 'Loading_Wheel',
                             rect: ['0px', '0px', '44px', '44px', 'auto', 'auto'],
+                            id: 'Loading_Wheel',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/loading13.svg', '0px', '0px']
                         }
                     ],
@@ -238,20 +240,20 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '133px', '24px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [24, ''], 'rgba(0,0,0,1)', '100', 'none', '', 'break-word', 'normal'],
+                            type: 'text',
                             id: 'Headline',
                             text: '<p style=\"margin: 0px;\">​<span style=\"color: rgb(255, 255, 255);\">MULTIMETER</span></p>',
                             align: 'center',
-                            type: 'text'
+                            rect: ['0px', '0px', '133px', '24px', 'auto', 'auto']
                         },
                         {
-                            rect: ['0px', '19px', '133px', '32px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [24, ''], 'rgba(119,119,119,1.00)', '100', 'none', '', 'break-word', 'normal'],
+                            type: 'text',
                             id: 'Subline',
                             text: '<p style=\"margin: 0px;\">​<span style=\"color: rgb(189, 189, 189); font-size: 14px;\">Touch</span></p>',
                             align: 'center',
-                            type: 'text'
+                            rect: ['0px', '19px', '133px', '32px', 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -281,14 +283,14 @@
                             rect: ['44px', '-109px', '44', '44', 'auto', 'auto'],
                             id: 'Loading_Wheel',
                             symbolName: 'Loading_Wheel',
-                            opacity: '0',
-                            type: 'rect'
+                            type: 'rect',
+                            opacity: '0'
                         },
                         {
-                            type: 'rect',
+                            rect: ['0px', '-55px', '133', '51', 'auto', 'auto'],
                             id: 'Multimeter_Touch_Label',
                             symbolName: 'Multimeter_Touch_Label',
-                            rect: ['0px', '-55px', '133', '51', 'auto', 'auto']
+                            type: 'rect'
                         }
                     ],
                     style: {
@@ -302,16 +304,6 @@
                     autoPlay: true,
                     data: [
                         [
-                            "eid17",
-                            "top",
-                            1126,
-                            964,
-                            "easeInOutQuad",
-                            "${Multimeter_Touch_Label}",
-                            '54px',
-                            '-55px'
-                        ],
-                        [
                             "eid10",
                             "opacity",
                             1000,
@@ -320,6 +312,16 @@
                             "${Loading_Wheel}",
                             '0',
                             '1'
+                        ],
+                        [
+                            "eid17",
+                            "top",
+                            1126,
+                            964,
+                            "easeInOutQuad",
+                            "${Multimeter_Touch_Label}",
+                            '54px',
+                            '-55px'
                         ],
                         [
                             "eid8",
@@ -354,25 +356,25 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '514px', '647px', 'auto', 'auto'],
                             id: 'System',
                             stroke: [1, 'rgba(203,16,16,1.00)', 'none'],
-                            rect: ['0px', '0px', '514px', '647px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(33,31,31,1.00)']
                         },
                         {
-                            type: 'rect',
+                            rect: ['243px', '0', '514', '647', 'auto', 'auto'],
                             id: 'Menu_Item_Symbol',
                             symbolName: 'Menu_Item_View',
-                            rect: ['243px', '0', '514', '647', 'auto', 'auto'],
-                            opacity: '0'
+                            opacity: '0',
+                            type: 'rect'
                         },
                         {
-                            type: 'rect',
+                            rect: ['1px', '16', '514', '614', 'auto', 'auto'],
                             id: 'Menu_View',
                             symbolName: 'Menu_View',
-                            rect: ['1px', '16', '514', '614', 'auto', 'auto'],
-                            opacity: '1'
+                            opacity: '1',
+                            type: 'rect'
                         }
                     ],
                     style: {
@@ -390,38 +392,8 @@
                     },
                     data: [
                         [
-                            "eid88",
-                            "left",
-                            1250,
-                            1000,
-                            "easeInOutQuad",
-                            "${Menu_Item_Symbol}",
-                            '243px',
-                            '0px'
-                        ],
-                        [
-                            "eid70",
-                            "left",
-                            0,
-                            0,
-                            "easeInOutQuad",
-                            "${Menu_View}",
-                            '1px',
-                            '1px'
-                        ],
-                        [
-                            "eid69",
-                            "left",
-                            1000,
-                            1000,
-                            "easeInOutQuad",
-                            "${Menu_View}",
-                            '1px',
-                            '-243px'
-                        ],
-                        [
-                            "eid93",
-                            "scaleX",
+                            "eid94",
+                            "scaleY",
                             1250,
                             1000,
                             "easeInOutQuad",
@@ -470,6 +442,36 @@
                             '0.6'
                         ],
                         [
+                            "eid70",
+                            "left",
+                            0,
+                            0,
+                            "easeInOutQuad",
+                            "${Menu_View}",
+                            '1px',
+                            '1px'
+                        ],
+                        [
+                            "eid69",
+                            "left",
+                            1000,
+                            1000,
+                            "easeInOutQuad",
+                            "${Menu_View}",
+                            '1px',
+                            '-243px'
+                        ],
+                        [
+                            "eid93",
+                            "scaleX",
+                            1250,
+                            1000,
+                            "easeInOutQuad",
+                            "${Menu_Item_Symbol}",
+                            '1.4',
+                            '1'
+                        ],
+                        [
                             "eid71",
                             "scaleX",
                             0,
@@ -500,14 +502,14 @@
                             '1'
                         ],
                         [
-                            "eid94",
-                            "scaleY",
+                            "eid88",
+                            "left",
                             1250,
                             1000,
                             "easeInOutQuad",
                             "${Menu_Item_Symbol}",
-                            '1.4',
-                            '1'
+                            '243px',
+                            '0px'
                         ]
                     ]
                 }
@@ -522,39 +524,39 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
                             id: 'Item_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
+                            type: 'rect',
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
-                            rect: ['8px', '8px', '45px', '45px', 'auto', 'auto'],
-                            id: 'Icon_Thermometer',
                             type: 'image',
+                            id: 'Icon_Thermometer',
+                            rect: ['8px', '8px', '45px', '45px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/thermometer48.svg', '0px', '0px']
                         },
                         {
-                            type: 'text',
                             rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
-                            align: 'center',
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Celsius Grad</span></p>',
                             id: 'Label',
                             textStyle: ['', '', '', '', 'none'],
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Celsius Grad</span></p>',
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            align: 'center',
+                            type: 'text'
                         },
                         {
-                            rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
-                            id: 'Right_Angle',
                             type: 'image',
+                            id: 'Right_Angle',
+                            rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
-                            type: 'rect',
                             rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
-                            opacity: '0',
-                            id: 'Click_Area',
+                            type: 'rect',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
+                            id: 'Click_Area',
+                            opacity: '0',
                             cursor: 'pointer',
                             fill: ['rgba(41,38,38,1)']
                         }
@@ -583,42 +585,42 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Item_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Widerstand</span></p>',
+                            type: 'text',
+                            align: 'center',
                             id: 'Label',
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Widerstand</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            type: 'text'
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
-                            rect: ['7px', '6px', '45px', '45px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">Ω</span></p>',
-                            id: 'LabelCopy2',
-                            textStyle: ['', '', '', '', 'none'],
+                            type: 'text',
                             align: 'center',
-                            type: 'text'
+                            id: 'LabelCopy2',
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">Ω</span></p>',
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '6px', '45px', '45px', 'auto', 'auto']
                         },
                         {
-                            type: 'image',
-                            id: 'Right_Angle',
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
+                            id: 'Right_Angle',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
-                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             type: 'rect',
-                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            id: 'Click_Area',
+                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             opacity: '0',
+                            id: 'Click_Area',
+                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             cursor: 'pointer',
                             fill: ['rgba(41,38,38,1)']
                         }
@@ -647,42 +649,42 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Item_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Kapazität</span></p>',
+                            type: 'text',
+                            align: 'center',
                             id: 'Label',
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Kapazität</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            type: 'text'
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
-                            rect: ['7px', '6px', '45px', '45px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">F</span></p>',
-                            id: 'LabelCopy2',
-                            textStyle: ['', '', '', '', 'none'],
+                            type: 'text',
                             align: 'center',
-                            type: 'text'
+                            id: 'LabelCopy2',
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">F</span></p>',
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '6px', '45px', '45px', 'auto', 'auto']
                         },
                         {
-                            type: 'image',
-                            id: 'Right_Angle',
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
+                            id: 'Right_Angle',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
-                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             type: 'rect',
-                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            id: 'Click_Area',
+                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             opacity: '0',
+                            id: 'Click_Area',
+                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             cursor: 'pointer',
                             fill: ['rgba(41,38,38,1)']
                         }
@@ -711,78 +713,77 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Item_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
-                            textStyle: ['', '', '', '', 'none'],
                             font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
+                            type: 'text',
+                            align: 'center',
                             id: 'Label',
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Ampere (Gleichstrom)</span></p>',
-                            align: 'center',
-                            type: 'text'
-                        },
-                        {
-                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto'],
                             textStyle: ['', '', '', '', 'none'],
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
-                            id: 'LabelCopy2',
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">A</span></p>',
-                            align: 'center',
-                            type: 'text'
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Ampere (Gleichstrom)</span></p>',
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
+                            type: 'text',
+                            align: 'center',
+                            id: 'LabelCopy2',
+                            textStyle: ['', '', '', '', 'none'],
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">A</span></p>',
+                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto']
+                        },
+                        {
+                            rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
                             id: 'Right_Angle',
                             type: 'image',
-                            rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
-                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
-                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             type: 'rect',
-                            id: 'Click_Area',
+                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             opacity: '0',
+                            id: 'Click_Area',
+                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             cursor: 'pointer',
                             fill: ['rgba(41,38,38,1)']
                         },
                         {
-                            rect: ['14px', '45px', '32px', '3px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle6',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['14px', '45px', '32px', '3px', 'auto', 'auto'],
                             fill: ['rgba(43,150,211,1.00)']
                         },
                         {
-                            rect: ['14px', '51px', '8px', '3px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle6Copy',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['14px', '51px', '8px', '3px', 'auto', 'auto'],
                             fill: ['rgba(43,150,211,1.00)']
                         },
                         {
-                            rect: ['26px', '51px', '8px', '3px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle6Copy2',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['26px', '51px', '8px', '3px', 'auto', 'auto'],
                             fill: ['rgba(43,150,211,1.00)']
                         },
                         {
-                            rect: ['38px', '51px', '8px', '3px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle6Copy3',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['38px', '51px', '8px', '3px', 'auto', 'auto'],
                             fill: ['rgba(43,150,211,1.00)']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '470px', '62px']
+                            rect: [null, null, '470px', '62px']
                         }
                     }
                 },
@@ -804,51 +805,51 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Item_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Ampere (Wechselstrom)</span></p>',
+                            type: 'text',
+                            align: 'center',
                             id: 'Label',
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Ampere (Wechselstrom)</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            type: 'text'
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
-                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">A</span></p>',
+                            type: 'text',
+                            align: 'center',
                             id: 'LabelCopy2',
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">A</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            type: 'text'
+                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto']
                         },
                         {
-                            rect: ['7px', '23px', '45px', '29px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">~</span></p>',
-                            id: 'LabelCopy3',
-                            textStyle: ['', '', '', '', 'none'],
+                            type: 'text',
                             align: 'center',
-                            type: 'text'
+                            id: 'LabelCopy3',
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">~</span></p>',
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '23px', '45px', '29px', 'auto', 'auto']
                         },
                         {
-                            type: 'image',
-                            id: 'Right_Angle',
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
+                            id: 'Right_Angle',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
-                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             type: 'rect',
-                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            id: 'Click_Area',
+                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             opacity: '0',
+                            id: 'Click_Area',
+                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             cursor: 'pointer',
                             fill: ['rgba(41,38,38,1)']
                         }
@@ -877,78 +878,77 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Item_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
-                            textStyle: ['', '', '', '', 'none'],
                             font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
+                            type: 'text',
+                            align: 'center',
                             id: 'Label',
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Volt (Gleichstrom)</span></p>',
-                            align: 'center',
-                            type: 'text'
-                        },
-                        {
-                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto'],
                             textStyle: ['', '', '', '', 'none'],
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
-                            id: 'LabelCopy2',
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">V</span></p>',
-                            align: 'center',
-                            type: 'text'
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Volt (Gleichstrom)</span></p>',
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
+                            type: 'text',
+                            align: 'center',
+                            id: 'LabelCopy2',
+                            textStyle: ['', '', '', '', 'none'],
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">V</span></p>',
+                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto']
+                        },
+                        {
+                            rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
                             id: 'Right_Angle',
                             type: 'image',
-                            rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
-                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
-                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             type: 'rect',
-                            id: 'Click_Area',
+                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             opacity: '0',
+                            id: 'Click_Area',
+                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             cursor: 'pointer',
                             fill: ['rgba(41,38,38,1)']
                         },
                         {
-                            rect: ['14px', '45px', '32px', '3px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle6',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['14px', '45px', '32px', '3px', 'auto', 'auto'],
                             fill: ['rgba(43,150,211,1.00)']
                         },
                         {
-                            rect: ['14px', '51px', '8px', '3px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle6Copy',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['14px', '51px', '8px', '3px', 'auto', 'auto'],
                             fill: ['rgba(43,150,211,1.00)']
                         },
                         {
-                            rect: ['26px', '51px', '8px', '3px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle6Copy2',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['26px', '51px', '8px', '3px', 'auto', 'auto'],
                             fill: ['rgba(43,150,211,1.00)']
                         },
                         {
-                            rect: ['38px', '51px', '8px', '3px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Rectangle6Copy3',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['38px', '51px', '8px', '3px', 'auto', 'auto'],
                             fill: ['rgba(43,150,211,1.00)']
                         }
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '470px', '62px']
+                            rect: [null, null, '470px', '62px']
                         }
                     }
                 },
@@ -970,51 +970,51 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Item_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Volt (Wechselstrom)</span></p>',
+                            type: 'text',
+                            align: 'center',
                             id: 'Label',
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Volt (Wechselstrom)</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            type: 'text'
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
-                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">V</span></p>',
+                            type: 'text',
+                            align: 'center',
                             id: 'LabelCopy2',
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">V</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            type: 'text'
+                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto']
                         },
                         {
-                            rect: ['7px', '23px', '45px', '29px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">~</span></p>',
-                            id: 'LabelCopy3',
-                            textStyle: ['', '', '', '', 'none'],
+                            type: 'text',
                             align: 'center',
-                            type: 'text'
+                            id: 'LabelCopy3',
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">~</span></p>',
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '23px', '45px', '29px', 'auto', 'auto']
                         },
                         {
-                            type: 'image',
-                            id: 'Right_Angle',
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
+                            id: 'Right_Angle',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
-                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             type: 'rect',
-                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            id: 'Click_Area',
+                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             opacity: '0',
+                            id: 'Click_Area',
+                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             cursor: 'pointer',
                             fill: ['rgba(41,38,38,1)']
                         }
@@ -1043,42 +1043,42 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Item_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Gleichspannungsverstärkung</span></p>',
+                            type: 'text',
+                            align: 'center',
                             id: 'Label',
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Gleichspannungsverstärkung</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            type: 'text'
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
-                            rect: ['7px', '10px', '45px', '45px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [31, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 24px;\">hFE</span></p>',
-                            id: 'LabelCopy2',
-                            textStyle: ['', '', '', '', 'none'],
+                            type: 'text',
                             align: 'center',
-                            type: 'text'
+                            id: 'LabelCopy2',
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 24px;\">hFE</span></p>',
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '10px', '45px', '45px', 'auto', 'auto']
                         },
                         {
-                            type: 'image',
-                            id: 'Right_Angle',
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
+                            id: 'Right_Angle',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
-                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             type: 'rect',
-                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            id: 'Click_Area',
+                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             opacity: '0',
+                            id: 'Click_Area',
+                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             cursor: 'pointer',
                             fill: ['rgba(41,38,38,1)']
                         }
@@ -1107,26 +1107,26 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Item_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '470px', '62px', 'auto', 'auto'],
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
-                            type: 'image',
-                            id: 'Icon_Thermometer',
                             rect: ['11px', '12px', '38px', '38px', 'auto', 'auto'],
+                            id: 'Icon_Thermometer',
+                            type: 'image',
                             fill: ['rgba(0,0,0,0)', 'images/settings56.svg', '0px', '0px']
                         },
                         {
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px; text-align: left;\"><span style=\"color: rgb(255, 255, 255);\">Einstellungen</span></p>',
-                            id: 'Label',
-                            textStyle: ['', '', '', '', 'none'],
+                            type: 'text',
                             align: 'center',
-                            type: 'text'
+                            id: 'Label',
+                            text: '<p style=\"margin: 0px; text-align: left;\"><span style=\"color: rgb(255, 255, 255);\">Einstellungen</span></p>',
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
                             type: 'image',
@@ -1137,11 +1137,11 @@
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
-                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             type: 'rect',
-                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            id: 'Click_Area',
+                            rect: ['1px', '0px', '470px', '62px', 'auto', 'auto'],
                             opacity: '0',
+                            id: 'Click_Area',
+                            stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             cursor: 'pointer',
                             fill: ['rgba(41,38,38,1)']
                         }
@@ -1245,14 +1245,14 @@
                     autoPlay: true,
                     data: [
                         [
-                            "eid51",
-                            "left",
+                            "eid54",
+                            "top",
                             0,
                             0,
                             "easeInOutQuad",
-                            "${hFE_Item}",
-                            '19px',
-                            '19px'
+                            "${Settings_Item}",
+                            '552px',
+                            '552px'
                         ],
                         [
                             "eid52",
@@ -1315,74 +1315,14 @@
                             '19px'
                         ],
                         [
-                            "eid54",
-                            "top",
-                            0,
-                            0,
-                            "easeInOutQuad",
-                            "${Settings_Item}",
-                            '552px',
-                            '552px'
-                        ],
-                        [
-                            "eid46",
-                            "top",
-                            0,
-                            0,
-                            "easeInOutQuad",
-                            "${Ampere_AC_Item}",
-                            '292px',
-                            '292px'
-                        ],
-                        [
-                            "eid50",
-                            "top",
-                            0,
-                            0,
-                            "easeInOutQuad",
-                            "${Volt_AC_Item}",
-                            '418px',
-                            '418px'
-                        ],
-                        [
-                            "eid47",
+                            "eid53",
                             "left",
                             0,
                             0,
                             "easeInOutQuad",
-                            "${Volt_DC_Item}",
+                            "${Settings_Item}",
                             '19px',
                             '19px'
-                        ],
-                        [
-                            "eid40",
-                            "top",
-                            0,
-                            0,
-                            "easeInOutQuad",
-                            "${Resistance_Item}",
-                            '103px',
-                            '103px'
-                        ],
-                        [
-                            "eid42",
-                            "top",
-                            0,
-                            0,
-                            "easeInOutQuad",
-                            "${Capacity_Item}",
-                            '166px',
-                            '166px'
-                        ],
-                        [
-                            "eid48",
-                            "top",
-                            0,
-                            0,
-                            "easeInOutQuad",
-                            "${Volt_DC_Item}",
-                            '355px',
-                            '355px'
                         ],
                         [
                             "eid41",
@@ -1395,12 +1335,72 @@
                             '19px'
                         ],
                         [
-                            "eid53",
+                            "eid48",
+                            "top",
+                            0,
+                            0,
+                            "easeInOutQuad",
+                            "${Volt_DC_Item}",
+                            '355px',
+                            '355px'
+                        ],
+                        [
+                            "eid40",
+                            "top",
+                            0,
+                            0,
+                            "easeInOutQuad",
+                            "${Resistance_Item}",
+                            '103px',
+                            '103px'
+                        ],
+                        [
+                            "eid47",
                             "left",
                             0,
                             0,
                             "easeInOutQuad",
-                            "${Settings_Item}",
+                            "${Volt_DC_Item}",
+                            '19px',
+                            '19px'
+                        ],
+                        [
+                            "eid42",
+                            "top",
+                            0,
+                            0,
+                            "easeInOutQuad",
+                            "${Capacity_Item}",
+                            '166px',
+                            '166px'
+                        ],
+                        [
+                            "eid50",
+                            "top",
+                            0,
+                            0,
+                            "easeInOutQuad",
+                            "${Volt_AC_Item}",
+                            '418px',
+                            '418px'
+                        ],
+                        [
+                            "eid46",
+                            "top",
+                            0,
+                            0,
+                            "easeInOutQuad",
+                            "${Ampere_AC_Item}",
+                            '292px',
+                            '292px'
+                        ],
+                        [
+                            "eid51",
+                            "left",
+                            0,
+                            0,
+                            "easeInOutQuad",
+                            "${hFE_Item}",
                             '19px',
                             '19px'
                         ]
@@ -1426,7 +1426,7 @@
                         {
                             rect: ['0px', '7px', '514px', '32px', 'auto', 'auto'],
                             textStyle: ['', '', '', '', 'none'],
-                            font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(255,255,255,1.00)', '100', 'none', 'normal', 'break-word', 'normal'],
+                            font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(255,255,255,1.00)', '300', 'none', 'normal', 'break-word', 'normal'],
                             id: 'Headline',
                             text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(255, 255, 255);\">Messung</span></p>',
                             align: 'center',
@@ -1447,14 +1447,6 @@
                             text: '<p style=\"margin: 0px;\">​<span style=\"color: rgb(235, 219, 219); font-size: 150px;\">000,00​</span></p>',
                             align: 'center',
                             type: 'text'
-                        },
-                        {
-                            rect: ['8px', '9px', '22px', '22px', 'auto', 'auto'],
-                            transform: [[], [], [], ['-1']],
-                            id: 'Go_Back_Btn',
-                            type: 'image',
-                            cursor: 'pointer',
-                            fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
                             rect: ['23px', '51px', '469px', '22px', 'auto', 'auto'],
@@ -1517,6 +1509,20 @@
                             symbolName: 'Button_Element',
                             rect: ['387px', '230', '129', '64', 'auto', 'auto'],
                             type: 'rect'
+                        },
+                        {
+                            type: 'rect',
+                            id: 'Show_Definition_Btn',
+                            symbolName: 'Navigation_Button_Fore',
+                            cursor: 'pointer',
+                            rect: ['417', '9', '93', '22', 'auto', 'auto']
+                        },
+                        {
+                            type: 'rect',
+                            id: 'Go_Back_Btn',
+                            symbolName: 'Navigation_Button_Back',
+                            cursor: 'pointer',
+                            rect: ['5', '9', '97', '22', 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -1593,24 +1599,24 @@
                 content: {
                     dom: [
                         {
-                            rect: ['0px', '0px', '100%', '100%', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Btn_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '0px', '100%', '100%', 'auto', 'auto'],
                             fill: ['rgba(101,101,101,1.00)']
                         },
                         {
-                            rect: ['0px', '13px', '100%', '57.8%', 'auto', 'auto'],
-                            textStyle: ['', '', '', '', 'none'],
                             font: ['\'Helvetica Neue\'', [36, 'px'], 'rgba(255,255,255,1.00)', '100', 'none', 'normal', 'break-word', 'normal'],
-                            id: 'Label',
-                            text: '<p style=\"margin: 0px;\">​<span style=\"font-size: 36px;\">Label</span></p>',
+                            type: 'text',
                             align: 'center',
-                            type: 'text'
+                            id: 'Label',
+                            textStyle: ['', '', '', '', 'none'],
+                            text: '<p style=\"margin: 0px;\">​<span style=\"font-size: 36px;\">Label</span></p>',
+                            rect: ['0px', '13px', '100%', '57.8%', 'auto', 'auto']
                         },
                         {
-                            rect: ['0px', '0px', '100%', '100%', 'auto', 'auto'],
                             type: 'rect',
+                            rect: ['0px', '0px', '100%', '100%', 'auto', 'auto'],
                             id: 'Click_Area',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
                             cursor: 'pointer',
@@ -1619,8 +1625,89 @@
                     ],
                     style: {
                         '${symbolSelector}': {
+                            rect: [null, null, '129px', '64px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: true,
+                    data: [
+
+                    ]
+                }
+            },
+            "Navigation_Button_Back": {
+                version: "6.0.0",
+                minimumCompatibleVersion: "5.0.0",
+                build: "6.0.0.400",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            rect: ['0px', '0px', '22px', '22px', 'auto', 'auto'],
+                            transform: [[], [], [], ['-1']],
+                            id: 'Go_Back_Btn',
+                            type: 'image',
+                            cursor: 'pointer',
+                            fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
+                        },
+                        {
+                            rect: ['28px', '3px', '69px', '14px', 'auto', 'auto'],
+                            font: ['Arial, Helvetica, sans-serif', [14, 'px'], 'rgba(31,152,225,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
+                            id: 'TextCopy2',
+                            text: '<p style=\"margin: 0px;\">​Zurück</p>',
+                            align: 'left',
+                            type: 'text'
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
                             isStage: 'true',
-                            rect: [undefined, undefined, '129px', '64px']
+                            rect: [undefined, undefined, '97px', '22px']
+                        }
+                    }
+                },
+                timeline: {
+                    duration: 0,
+                    autoPlay: true,
+                    data: [
+
+                    ]
+                }
+            },
+            "Navigation_Button_Fore": {
+                version: "6.0.0",
+                minimumCompatibleVersion: "5.0.0",
+                build: "6.0.0.400",
+                scaleToFit: "none",
+                centerStage: "none",
+                resizeInstances: false,
+                content: {
+                    dom: [
+                        {
+                            rect: ['71px', '0px', '22px', '22px', 'auto', 'auto'],
+                            transform: [[], [], [], ['1', '-1']],
+                            id: 'Go_Back_BtnCopy',
+                            type: 'image',
+                            cursor: 'pointer',
+                            fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
+                        },
+                        {
+                            rect: ['0px', '3px', '69px', '14px', 'auto', 'auto'],
+                            font: ['Arial, Helvetica, sans-serif', [14, 'px'], 'rgba(31,152,225,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
+                            id: 'TextCopy',
+                            text: '<p style=\"margin: 0px;\">​Definition</p>',
+                            align: 'right',
+                            type: 'text'
+                        }
+                    ],
+                    style: {
+                        '${symbolSelector}': {
+                            isStage: 'true',
+                            rect: [undefined, undefined, '93px', '22px']
                         }
                     }
                 },

@@ -13,22 +13,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    (function(symbolName) {
       
       
-      Symbol.bindElementAction(compId, symbolName, "document", "compositionReady", function(sym, e) {
-         function init ( ChartJs ) {
-         	sym.play( 0 );
-         }
-         
-         yepnope(
-         	{
-         		nope: [
-         			'lib/Chart.min.js'
-         		] ,
-         		complete: init
-         	}
-         );
-
-      });
-      //Edge binding end
+      
 
    })("stage");
    //Edge symbol end:'stage'
@@ -374,7 +359,32 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
    
       Symbol.bindTimelineAction(compId, symbolName, "Default Timeline", "play", function(sym, e) {
          var valueButtons = [ '200', '2K', '200K', '2M' ],
-         	 selectorPrefix = 'Button_';
+         	selectorPrefix = 'Button_',
+         
+         	commaValue = 0,
+         	maxCommaValue = 100,
+         	interval,
+         
+         	chart,
+         	chartElement = sym.$( 'Graph_Container' ),
+         	lineChartData = {
+         		labels : [ "1", "2", "3", "4", "5", "6", "7" ],
+         		datasets : [
+         			{
+         				label: "Die letzten Messungen",
+         				fillColor : "rgba(43,150,211,0.2)",
+         				strokeColor : "rgba(43,150,211,1.00)",
+         				pointColor : "rgba(220,220,220,1)",
+         				pointStrokeColor : "#fff",
+         				pointHighlightFill : "#fff",
+         				pointHighlightStroke : "rgba(220,220,220,1)",
+         				data : [ 0, 0, 0, 0, 0, 0, 0 ]
+         			}
+         		]
+         	},
+         	currentGraphIndex = 0,
+         	absolutePathEntries;
+         
          
          for ( var i = 0; i < valueButtons.length; i++ ) {
          	var elem = sym.getSymbol( selectorPrefix + valueButtons[ i ] );
@@ -389,71 +399,52 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          	elem.$( "Label" ).html( valueButtons[ i ] );
          }
          
-         setTimeout( function () {
-         	var value = 0,
-         		 commaValue = 0,
-         		 maxValue = 1000,
-         		 maxCommaValue = 100,
-         		 interval,
+         function updateValue () {
+         	var randomValue = parseInt( 400 + Math.random() * 100 );
+         	sym.$("Value_Display").html( ( randomValue < 10 ? '00' + randomValue : ( randomValue < 100 ? '0' + randomValue : randomValue ) ) + ',' + ( commaValue < 10 ? '0' + commaValue : commaValue ) );
          
-         		 chart,
-         		 chartElement = sym.$( 'Graph_Container' ),
-         		 lineChartData = {
-         				labels : [ "1", "2", "3", "4", "5", "6", "7" ],
-         				datasets : [
-         					{
-         						label: "Die letzten Messungen",
-         						fillColor : "rgba(43,150,211,0.2)",
-         						strokeColor : "rgba(43,150,211,1.00)",
-         						pointColor : "rgba(220,220,220,1)",
-         						pointStrokeColor : "#fff",
-         						pointHighlightFill : "#fff",
-         						pointHighlightStroke : "rgba(220,220,220,1)",
-         						data : [ 0, 1, 2, 3, 4, 5, 6 ]
-         					}
-         				]
-         			},
-         			currentGraphIndex = 0,
-         			absolutePathEntries;
+         	chart.addData( [ randomValue ], absolutePathEntries );
+         	chart.removeData();
          
-         		var updateValue = function () {
-         			var randomValue = parseInt( 400 + Math.random() * 100 );
-         				sym.$("Value_Display").html( ( randomValue < 10 ? '00' + randomValue : ( randomValue < 100 ? '0' + randomValue : randomValue ) ) + ',' + ( commaValue < 10 ? '0' + commaValue : commaValue ) );
+         	absolutePathEntries++;
+         	commaValue += 5;
          
-         				chart.addData( [ randomValue ], absolutePathEntries );
-         				chart.removeData();
+         	if ( commaValue >= maxCommaValue ) {
+         		commaValue = 0;
+         	}
+         }
          
-         				absolutePathEntries++;
+         function initGraph () {
+         	chartElement.html( '<canvas id="value-graph" width="469" height="285"></canvas>' );
          
-         				value++;
-         				commaValue += 5;
+         	var canvas = document.getElementById( 'value-graph' ),
+         		ctx = canvas.getContext( '2d' );
+         		
+         	absolutePathEntries = lineChartData.datasets[ 0 ].data.length;
          
-         			if ( value >= maxValue ) {
-         				value = 0;
-         			}
+         	chart = new Chart( ctx ).Line( lineChartData, {
+         		responsive: true,
+         		animationSteps: 10
+         	} );
+         }
          
-         			if ( commaValue >= maxCommaValue ) {
-         				commaValue = 0;
-         			}
-         		}
-         
-         		function initGraph () {
-         			chartElement.html( '<canvas id="value-graph" width="469" height="285"></canvas>' );
-         
-         			var canvas = document.getElementById( 'value-graph' ),
-         				 ctx = canvas.getContext( "2d" );
-         
-         			chart = new Chart( ctx ).Line( lineChartData, {
-         				responsive: true,
-         				animationSteps: 10
-         			} );
-         		}
-         
-         		absolutePathEntries = lineChartData.datasets[ 0 ].data.length;
-         		initGraph();
-         
-         		interval = setInterval( updateValue, 1000 );
-         }, 1000 );
+         initGraph();
+         interval = setInterval( updateValue, 1000 );
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${Show_Definition_Btn}", "click", function(sym, e) {
+         $.ajax( {
+             url: 'https://en.wikipedia.org/w/api.php',
+             data: { title: 'Celsius Grad' },
+             dataType: 'json',
+             type: 'POST',
+             headers: { 'Api-User-Agent': 'Example/1.0/I dont now wtf' },
+             success: function( data ) {
+                console.log( data );
+             }
+         } );
 
       });
       //Edge binding end
@@ -484,5 +475,21 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
    })("Button_Element");
    //Edge symbol end:'Button_Element'
+
+   //=========================================================
+   
+   //Edge symbol: 'Navigation_Button_Back'
+   (function(symbolName) {   
+   
+   })("Navigation_Button_Back");
+   //Edge symbol end:'Navigation_Button_Back'
+
+   //=========================================================
+   
+   //Edge symbol: 'Navigation_Button_Fore'
+   (function(symbolName) {   
+   
+   })("Navigation_Button_Fore");
+   //Edge symbol end:'Navigation_Button_Fore'
 
 })(window.jQuery || AdobeEdge.$, AdobeEdge, "EDGE-68749657");
