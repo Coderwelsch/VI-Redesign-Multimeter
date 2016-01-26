@@ -1,0 +1,12 @@
+#Stage_Content_System_Menu_Item_View_Definition_View_Definition_Content {
+    padding: 0 20px;
+
+    box-sizing: border-box;
+}
+
+#Stage_Content_System_Menu_Item_View_Definition_View_Definition_Content p,
+#Stage_Content_System_Menu_Item_View_Definition_View_Definition_Content h1 {
+    font-family: 'Helvetica Neue';
+    font-weight: 400;
+    color: #000;
+}
