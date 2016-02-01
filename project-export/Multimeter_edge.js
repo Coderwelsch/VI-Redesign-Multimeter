@@ -77,20 +77,20 @@
                             fill: ['rgba(33,31,31,1.00)']
                         },
                         {
+                            type: 'rect',
                             transform: [[], [], [], ['0.6', '0.6']],
-                            rect: ['191', '396px', '133', '105', 'auto', 'auto'],
                             id: 'Boot_Animation',
                             symbolName: 'Boot_Animation',
                             opacity: '1',
-                            type: 'rect'
+                            rect: ['191', '396px', '133', '105', 'auto', 'auto']
                         },
                         {
+                            type: 'rect',
                             transform: [[], [], [], ['1.4', '1.4']],
-                            rect: ['0px', '0px', '516', '649', 'auto', 'auto'],
                             id: 'System',
                             symbolName: 'System',
                             opacity: '0',
-                            type: 'rect'
+                            rect: ['0px', '0px', '516', '649', 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -119,8 +119,8 @@
                             '0px'
                         ],
                         [
-                            "eid25",
-                            "scaleX",
+                            "eid26",
+                            "scaleY",
                             5000,
                             1000,
                             "easeInOutQuad",
@@ -129,8 +129,8 @@
                             '0.6'
                         ],
                         [
-                            "eid26",
-                            "scaleY",
+                            "eid25",
+                            "scaleX",
                             5000,
                             1000,
                             "easeInOutQuad",
@@ -149,13 +149,13 @@
                             '0px'
                         ],
                         [
-                            "eid31",
-                            "opacity",
+                            "eid37",
+                            "scaleY",
                             5000,
                             1000,
                             "easeInOutQuad",
                             "${System}",
-                            '0.000000',
+                            '1.4',
                             '1'
                         ],
                         [
@@ -179,13 +179,13 @@
                             '0'
                         ],
                         [
-                            "eid37",
-                            "scaleY",
+                            "eid31",
+                            "opacity",
                             5000,
                             1000,
                             "easeInOutQuad",
                             "${System}",
-                            '1.4',
+                            '0.000000',
                             '1'
                         ]
                     ]
@@ -240,20 +240,20 @@
                 content: {
                     dom: [
                         {
+                            font: ['\'Helvetica Neue\'', [24, ''], 'rgba(0,0,0,1)', '100', 'none', '', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['0px', '0px', '133px', '24px', 'auto', 'auto'],
                             id: 'Headline',
                             text: '<p style=\"margin: 0px;\">​<span style=\"color: rgb(255, 255, 255);\">MULTIMETER</span></p>',
                             align: 'center',
-                            font: ['\'Helvetica Neue\'', [24, ''], 'rgba(0,0,0,1)', '100', 'none', '', 'break-word', 'normal']
+                            rect: ['0px', '0px', '133px', '24px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [24, ''], 'rgba(119,119,119,1.00)', '100', 'none', '', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['0px', '19px', '133px', '32px', 'auto', 'auto'],
                             id: 'Subline',
                             text: '<p style=\"margin: 0px;\">​<span style=\"color: rgb(189, 189, 189); font-size: 14px;\">Touch</span></p>',
                             align: 'center',
-                            font: ['\'Helvetica Neue\'', [24, ''], 'rgba(119,119,119,1.00)', '100', 'none', '', 'break-word', 'normal']
+                            rect: ['0px', '19px', '133px', '32px', 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -280,10 +280,10 @@
                 content: {
                     dom: [
                         {
-                            type: 'rect',
+                            rect: ['44px', '-109px', '44', '44', 'auto', 'auto'],
                             id: 'Loading_Wheel',
                             symbolName: 'Loading_Wheel',
-                            rect: ['44px', '-109px', '44', '44', 'auto', 'auto'],
+                            type: 'rect',
                             opacity: '0'
                         },
                         {
@@ -363,18 +363,18 @@
                             fill: ['rgba(33,31,31,1.00)']
                         },
                         {
-                            rect: ['243px', '0', '514', '647', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Menu_Item_View',
                             symbolName: 'Menu_Item_View',
                             opacity: '0',
-                            type: 'rect'
+                            rect: ['243px', '0', '514', '647', 'auto', 'auto']
                         },
                         {
-                            rect: ['1px', '16', '514', '614', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Menu_View',
                             symbolName: 'Menu_View',
                             opacity: '1',
-                            type: 'rect'
+                            rect: ['1px', '16', '514', '614', 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -392,13 +392,13 @@
                     },
                     data: [
                         [
-                            "eid95",
-                            "opacity",
+                            "eid94",
+                            "scaleY",
                             1000,
                             1000,
                             "easeInOutQuad",
                             "${Menu_Item_View}",
-                            '0',
+                            '1.4',
                             '1'
                         ],
                         [
@@ -410,26 +410,6 @@
                             "${Menu_Item_View}",
                             '1.4',
                             '1'
-                        ],
-                        [
-                            "eid70",
-                            "left",
-                            0,
-                            0,
-                            "easeInOutQuad",
-                            "${Menu_View}",
-                            '1px',
-                            '1px'
-                        ],
-                        [
-                            "eid69",
-                            "left",
-                            1000,
-                            1000,
-                            "easeInOutQuad",
-                            "${Menu_View}",
-                            '1px',
-                            '-243px'
                         ],
                         [
                             "eid73",
@@ -450,6 +430,26 @@
                             "${Menu_View}",
                             '1',
                             '0'
+                        ],
+                        [
+                            "eid70",
+                            "left",
+                            0,
+                            0,
+                            "easeInOutQuad",
+                            "${Menu_View}",
+                            '1px',
+                            '1px'
+                        ],
+                        [
+                            "eid69",
+                            "left",
+                            1000,
+                            1000,
+                            "easeInOutQuad",
+                            "${Menu_View}",
+                            '1px',
+                            '-243px'
                         ],
                         [
                             "eid72",
@@ -502,13 +502,13 @@
                             '0px'
                         ],
                         [
-                            "eid94",
-                            "scaleY",
+                            "eid95",
+                            "opacity",
                             1000,
                             1000,
                             "easeInOutQuad",
                             "${Menu_Item_View}",
-                            '1.4',
+                            '0',
                             '1'
                         ]
                     ]
@@ -537,13 +537,13 @@
                             fill: ['rgba(0,0,0,0)', 'images/thermometer48.svg', '0px', '0px']
                         },
                         {
+                            type: 'text',
                             rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             align: 'center',
                             id: 'Label',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Grad Celsius</span></p>',
-                            type: 'text'
+                            textStyle: ['', '', '', '', 'none'],
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
                         },
                         {
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
@@ -592,22 +592,22 @@
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             align: 'center',
                             id: 'Label',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Widerstand</span></p>',
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['7px', '6px', '45px', '45px', 'auto', 'auto'],
                             align: 'center',
                             id: 'LabelCopy2',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">Ω</span></p>',
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '6px', '45px', '45px', 'auto', 'auto']
                         },
                         {
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
@@ -656,22 +656,22 @@
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             align: 'center',
                             id: 'Label',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Kapazität</span></p>',
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['7px', '6px', '45px', '45px', 'auto', 'auto'],
                             align: 'center',
                             id: 'LabelCopy2',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">F</span></p>',
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '6px', '45px', '45px', 'auto', 'auto']
                         },
                         {
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
@@ -720,22 +720,22 @@
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             align: 'center',
                             id: 'Label',
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Ampere (Gleichstrom)</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Ampere (Gleichstrom)</span></p>',
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto'],
                             align: 'center',
                             id: 'LabelCopy2',
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">A</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal']
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">A</span></p>',
+                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto']
                         },
                         {
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
@@ -812,31 +812,31 @@
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             align: 'center',
                             id: 'Label',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Ampere (Wechselstrom)</span></p>',
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto'],
                             align: 'center',
                             id: 'LabelCopy2',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">A</span></p>',
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['7px', '23px', '45px', '29px', 'auto', 'auto'],
                             align: 'center',
                             id: 'LabelCopy3',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">~</span></p>',
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '23px', '45px', '29px', 'auto', 'auto']
                         },
                         {
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
@@ -885,22 +885,22 @@
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             align: 'center',
                             id: 'Label',
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Volt (Gleichstrom)</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Volt (Gleichstrom)</span></p>',
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto'],
                             align: 'center',
                             id: 'LabelCopy2',
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">V</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal']
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">V</span></p>',
+                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto']
                         },
                         {
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
@@ -977,31 +977,31 @@
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             align: 'center',
                             id: 'Label',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Volt (Wechselstrom)</span></p>',
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto'],
                             align: 'center',
                             id: 'LabelCopy2',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">V</span></p>',
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '0px', '45px', '45px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['7px', '23px', '45px', '29px', 'auto', 'auto'],
                             align: 'center',
                             id: 'LabelCopy3',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 42px;\">~</span></p>',
-                            font: ['\'Helvetica Neue\'', [35, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '23px', '45px', '29px', 'auto', 'auto']
                         },
                         {
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
@@ -1050,22 +1050,22 @@
                             fill: ['rgba(41,38,38,1.00)']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             align: 'center',
                             id: 'Label',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"color: rgb(43, 150, 211);\">Gleichspannungsverstärkung</span></p>',
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [31, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['7px', '10px', '45px', '45px', 'auto', 'auto'],
                             align: 'center',
                             id: 'LabelCopy2',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(43, 150, 211); font-size: 24px;\">hFE</span></p>',
-                            font: ['\'Helvetica Neue\'', [31, 'px'], 'rgba(0,0,0,1)', '400', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['7px', '10px', '45px', '45px', 'auto', 'auto']
                         },
                         {
                             rect: ['426px', '15px', '32px', '32px', 'auto', 'auto'],
@@ -1120,13 +1120,13 @@
                             fill: ['rgba(0,0,0,0)', 'images/settings56.svg', '0px', '0px']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto'],
                             align: 'center',
                             id: 'Label',
-                            textStyle: ['', '', '', '', 'none'],
                             text: '<p style=\"margin: 0px; text-align: left;\"><span style=\"color: rgb(255, 255, 255);\">Einstellungen</span></p>',
-                            font: ['\'Helvetica Neue\'', [28, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            textStyle: ['', '', '', '', 'none'],
+                            rect: ['58px', '17px', '367px', '32px', 'auto', 'auto']
                         },
                         {
                             type: 'image',
@@ -1170,13 +1170,13 @@
                 content: {
                     dom: [
                         {
+                            type: 'text',
                             rect: ['0px', '0px', '514px', '32px', 'auto', 'auto'],
-                            font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(255, 255, 255);\">Messgerät wählen:</span></p>',
-                            id: 'Headline',
                             textStyle: ['', '', '', '', 'none'],
+                            id: 'Headline',
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(255, 255, 255);\">Messgerät wählen:</span></p>',
                             align: 'center',
-                            type: 'text'
+                            font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
                         },
                         {
                             type: 'rect',
@@ -1244,24 +1244,24 @@
                     autoPlay: true,
                     data: [
                         [
-                            "eid51",
-                            "left",
-                            0,
-                            0,
-                            "easeInOutQuad",
-                            "${hFE_Item}",
-                            '19px',
-                            '19px'
-                        ],
-                        [
-                            "eid53",
-                            "left",
+                            "eid54",
+                            "top",
                             0,
                             0,
                             "easeInOutQuad",
                             "${Settings_Item}",
-                            '19px',
-                            '19px'
+                            '552px',
+                            '552px'
+                        ],
+                        [
+                            "eid52",
+                            "top",
+                            0,
+                            0,
+                            "easeInOutQuad",
+                            "${hFE_Item}",
+                            '481px',
+                            '481px'
                         ],
                         [
                             "eid45",
@@ -1314,24 +1314,24 @@
                             '19px'
                         ],
                         [
-                            "eid52",
-                            "top",
+                            "eid53",
+                            "left",
                             0,
                             0,
                             "easeInOutQuad",
-                            "${hFE_Item}",
-                            '481px',
-                            '481px'
+                            "${Settings_Item}",
+                            '19px',
+                            '19px'
                         ],
                         [
-                            "eid40",
-                            "top",
+                            "eid41",
+                            "left",
                             0,
                             0,
                             "easeInOutQuad",
-                            "${Resistance_Item}",
-                            '103px',
-                            '103px'
+                            "${Capacity_Item}",
+                            '19px',
+                            '19px'
                         ],
                         [
                             "eid48",
@@ -1344,14 +1344,14 @@
                             '355px'
                         ],
                         [
-                            "eid41",
-                            "left",
+                            "eid40",
+                            "top",
                             0,
                             0,
                             "easeInOutQuad",
-                            "${Capacity_Item}",
-                            '19px',
-                            '19px'
+                            "${Resistance_Item}",
+                            '103px',
+                            '103px'
                         ],
                         [
                             "eid47",
@@ -1394,14 +1394,14 @@
                             '292px'
                         ],
                         [
-                            "eid54",
-                            "top",
+                            "eid51",
+                            "left",
                             0,
                             0,
                             "easeInOutQuad",
-                            "${Settings_Item}",
-                            '552px',
-                            '552px'
+                            "${hFE_Item}",
+                            '19px',
+                            '19px'
                         ]
                     ]
                 }
@@ -1423,19 +1423,19 @@
                             fill: ['rgba(33,31,31,1.00)']
                         },
                         {
-                            rect: ['0px', '0px', '519', '641', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Menu_Item_View_Content',
                             symbolName: 'Menu_Item_View_Content',
                             opacity: '1',
-                            type: 'rect'
+                            rect: ['0px', '0px', '519', '641', 'auto', 'auto']
                         },
                         {
+                            transform: [[], [], [], ['1.4', '1.4']],
                             rect: ['243px', '0px', '514', '647', 'auto', 'auto'],
-                            type: 'rect',
                             id: 'Definition_View',
                             symbolName: 'Definition_View',
                             opacity: '0',
-                            transform: [[], [], [], ['1.4', '1.4']]
+                            type: 'rect'
                         }
                     ],
                     style: {
@@ -1601,13 +1601,13 @@
                             fill: ['rgba(101,101,101,1.00)']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [36, 'px'], 'rgba(255,255,255,1.00)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['0px', '13px', '100%', '57.8%', 'auto', 'auto'],
                             align: 'center',
                             id: 'Label',
-                            text: '<p style=\"margin: 0px;\">​<span style=\"font-size: 36px;\">Label</span></p>',
                             textStyle: ['', '', '', '', 'none'],
-                            font: ['\'Helvetica Neue\'', [36, 'px'], 'rgba(255,255,255,1.00)', '100', 'none', 'normal', 'break-word', 'normal']
+                            text: '<p style=\"margin: 0px;\">​<span style=\"font-size: 36px;\">Label</span></p>',
+                            rect: ['0px', '13px', '100%', '57.8%', 'auto', 'auto']
                         },
                         {
                             type: 'rect',
@@ -1642,20 +1642,20 @@
                 content: {
                     dom: [
                         {
-                            transform: [[], [], [], ['-1']],
-                            type: 'image',
-                            id: 'Go_Back_Btn',
                             rect: ['0px', '0px', '22px', '22px', 'auto', 'auto'],
+                            transform: [[], [], [], ['-1']],
+                            id: 'Go_Back_Btn',
+                            type: 'image',
                             cursor: 'pointer',
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
+                            rect: ['28px', '3px', '69px', '14px', 'auto', 'auto'],
                             font: ['Arial, Helvetica, sans-serif', [14, 'px'], 'rgba(31,152,225,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
-                            type: 'text',
                             id: 'TextCopy2',
                             text: '<p style=\"margin: 0px;\">​Zurück</p>',
                             align: 'left',
-                            rect: ['28px', '3px', '69px', '14px', 'auto', 'auto']
+                            type: 'text'
                         }
                     ],
                     style: {
@@ -1682,20 +1682,20 @@
                 content: {
                     dom: [
                         {
-                            type: 'image',
-                            rect: ['71px', '0px', '22px', '22px', 'auto', 'auto'],
-                            id: 'Go_Back_BtnCopy',
                             transform: [[], [], [], ['1', '-1']],
+                            type: 'image',
+                            id: 'Go_Back_BtnCopy',
+                            rect: ['71px', '0px', '22px', '22px', 'auto', 'auto'],
                             cursor: 'pointer',
                             fill: ['rgba(0,0,0,0)', 'images/right138.svg', '0px', '0px']
                         },
                         {
+                            font: ['Arial, Helvetica, sans-serif', [14, 'px'], 'rgba(31,152,225,1.00)', 'normal', 'none', '', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['0px', '3px', '69px', '14px', 'auto', 'auto'],
                             id: 'TextCopy',
                             text: '<p style=\"margin: 0px;\">​Definition</p>',
                             align: 'right',
-                            font: ['Arial, Helvetica, sans-serif', [14, 'px'], 'rgba(31,152,225,1.00)', 'normal', 'none', '', 'break-word', 'normal']
+                            rect: ['0px', '3px', '69px', '14px', 'auto', 'auto']
                         }
                     ],
                     style: {
@@ -1743,22 +1743,22 @@
                             rect: ['8px', '11px', null, null, 'auto', 'auto']
                         },
                         {
-                            id: 'Head',
                             type: 'group',
+                            id: 'Head',
                             rect: ['198', '11px', '119', '23', 'auto', 'auto'],
                             c: [
                             {
+                                type: 'text',
                                 rect: ['22px', '0px', '97px', '23px', 'auto', 'auto'],
-                                textStyle: ['', '', '', '', 'none'],
-                                font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(255,255,255,1.00)', '300', 'none', 'normal', 'break-word', 'normal'],
-                                id: 'Headline',
                                 text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(255, 255, 255);\">Wikipedia</span></p>',
+                                id: 'Headline',
+                                textStyle: ['', '', '', '', 'none'],
                                 align: 'center',
-                                type: 'text'
+                                font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(255,255,255,1.00)', '300', 'none', 'normal', 'break-word', 'normal']
                             },
                             {
-                                id: 'wikipedia',
                                 type: 'image',
+                                id: 'wikipedia',
                                 rect: ['0px', '1px', '22px', '22px', 'auto', 'auto'],
                                 fill: ['rgba(0,0,0,0)', 'images/wikipedia.svg', '0px', '0px']
                             }]
@@ -1766,8 +1766,7 @@
                     ],
                     style: {
                         '${symbolSelector}': {
-                            isStage: 'true',
-                            rect: [undefined, undefined, '514px', '647px']
+                            rect: [null, null, '514px', '647px']
                         }
                     }
                 },
@@ -1808,91 +1807,91 @@
                 content: {
                     dom: [
                         {
+                            font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(255,255,255,1.00)', '300', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['3px', '6px', '514px', '32px', 'auto', 'auto'],
-                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(255, 255, 255);\">Messung</span></p>',
+                            align: 'center',
                             id: 'Headline',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(255,255,255,1.00)', '300', 'none', 'normal', 'break-word', 'normal']
+                            text: '<p style=\"margin: 0px;\"><span style=\"color: rgb(255, 255, 255);\">Messung</span></p>',
+                            rect: ['3px', '6px', '514px', '32px', 'auto', 'auto']
                         },
                         {
-                            rect: ['0px', '38px', '524px', '191px', 'auto', 'auto'],
+                            type: 'rect',
                             id: 'Value_Background',
                             stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                            type: 'rect',
+                            rect: ['0px', '38px', '524px', '191px', 'auto', 'auto'],
                             fill: ['rgba(54,50,50,1.00)']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [150, 'px'], 'rgba(235,219,219,1.00)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['26px', '55px', '469px', '162px', 'auto', 'auto'],
-                            text: '<p style=\"margin: 0px;\">​<span style=\"color: rgb(235, 219, 219); font-size: 150px;\">000,00​</span></p>',
+                            align: 'center',
                             id: 'Value_Display',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            font: ['\'Helvetica Neue\'', [150, 'px'], 'rgba(235,219,219,1.00)', '100', 'none', 'normal', 'break-word', 'normal']
+                            text: '<p style=\"margin: 0px;\">​<span style=\"color: rgb(235, 219, 219); font-size: 150px;\">000,00​</span></p>',
+                            rect: ['26px', '55px', '469px', '162px', 'auto', 'auto']
                         },
                         {
+                            font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                             type: 'text',
-                            rect: ['26px', '50px', '469px', '22px', 'auto', 'auto'],
-                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"font-size: 14px; color: rgb(180, 165, 165);\">Messwert</span></p>',
+                            align: 'center',
                             id: 'Value_Label',
                             textStyle: ['', '', '', '', 'none'],
-                            align: 'center',
-                            font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                            text: '<p style=\"margin: 0px; text-align: left;\">​<span style=\"font-size: 14px; color: rgb(180, 165, 165);\">Messwert</span></p>',
+                            rect: ['26px', '50px', '469px', '22px', 'auto', 'auto']
                         },
                         {
-                            type: 'group',
-                            id: 'Graph_Element',
                             rect: ['0px', '294px', '524px', '353px', 'auto', 'auto'],
+                            id: 'Graph_Element',
+                            type: 'group',
                             c: [
                             {
-                                rect: ['0px', '0px', '100%', '353px', 'auto', 'auto'],
+                                type: 'rect',
                                 id: 'Graph_Background',
                                 stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                                type: 'rect',
+                                rect: ['0px', '0px', '100%', '353px', 'auto', 'auto'],
                                 fill: ['rgba(54,50,50,1.00)']
                             },
                             {
-                                rect: ['22px', '42px', '469px', '285px', 'auto', 'auto'],
+                                type: 'rect',
                                 id: 'Graph_Container',
                                 stroke: [1, 'rgb(203, 16, 16)', 'none'],
-                                type: 'rect',
+                                rect: ['22px', '42px', '469px', '285px', 'auto', 'auto'],
                                 fill: ['rgba(246,246,246,0.00)']
                             },
                             {
+                                font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal'],
                                 type: 'text',
-                                rect: ['23px', '10px', '469px', '22px', 'auto', 'auto'],
-                                text: '<p style=\"margin: 0px; text-align: left;\"><span style=\"font-size: 14px; color: rgb(180, 165, 165);\">Messgraph</span></p>',
+                                align: 'center',
                                 id: 'Graph_Label',
                                 textStyle: ['', '', '', '', 'none'],
-                                align: 'center',
-                                font: ['\'Helvetica Neue\'', [20, 'px'], 'rgba(0,0,0,1)', '100', 'none', 'normal', 'break-word', 'normal']
+                                text: '<p style=\"margin: 0px; text-align: left;\"><span style=\"font-size: 14px; color: rgb(180, 165, 165);\">Messgraph</span></p>',
+                                rect: ['23px', '10px', '469px', '22px', 'auto', 'auto']
                             }]
                         },
                         {
-                            type: 'rect',
+                            rect: ['1px', '229px', '129', '64', 'auto', 'auto'],
                             id: 'Button_200',
                             symbolName: 'Button_Element',
-                            rect: ['1px', '229px', '129', '64', 'auto', 'auto']
+                            type: 'rect'
                         },
                         {
-                            type: 'rect',
+                            rect: ['131px', '229px', '129', '64', 'auto', 'auto'],
                             id: 'Button_2K',
                             symbolName: 'Button_Element',
-                            rect: ['131px', '229px', '129', '64', 'auto', 'auto']
+                            type: 'rect'
                         },
                         {
-                            type: 'rect',
+                            rect: ['261px', '229px', '129', '64', 'auto', 'auto'],
                             id: 'Button_200K',
                             symbolName: 'Button_Element',
-                            rect: ['261px', '229px', '129', '64', 'auto', 'auto']
+                            type: 'rect'
                         },
                         {
-                            type: 'rect',
+                            rect: ['391px', '229px', '129', '64', 'auto', 'auto'],
                             id: 'Button_2M',
                             symbolName: 'Button_Element',
-                            rect: ['391px', '229px', '129', '64', 'auto', 'auto']
+                            type: 'rect'
                         },
                         {
                             type: 'rect',
