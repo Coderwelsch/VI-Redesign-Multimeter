@@ -413,13 +413,15 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          	sym.play( 'Show_Definition_View' );
 
          	var headlineText = sym.getSymbol("Menu_Item_View_Content").$("Headline").text(),
-         		 pagename = headlineText.toLowerCase().replace( / /g, '_' );
-         		 filename = encodeURIComponent( pagename ).replace( '%E2%80%8B', '' );
+                pagename = headlineText.toLowerCase().replace( / /g, '_' ),
+         		filename = encodeURIComponent( pagename ).replace( '%E2%80%8B', '' ),
+                url = 'definitions/' + filename + '.html',
+                definitionContent = sym.getSymbol( 'Definition_View' ).$( 'Definition_Content' );
 
-         	$.get( 'definitions/' + filename + '.html', function( data ) {
-                var content = sym.getSymbol( 'Definition_View' ).$( 'Definition_Content' );
+             definitionContent.html( 'Laden...' );
 
-                content.html( data );
+         	$.get( url, function( data ) {
+                definitionContent.html( data );
          	} );
          } );
 
@@ -498,15 +500,15 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
       Symbol.bindTimelineAction(compId, symbolName, "Default Timeline", "play", function(sym, e) {
          var valueButtons = [ '200', '2K', '200K', '2M' ],
          	selectorPrefix = 'Button_',
-
+         
          	commaValue = 0,
          	maxCommaValue = 100,
          	interval,
-
+         
          	chart,
          	chartElement = sym.$( 'Graph_Container' ),
          	lineChartData = {
-         		labels : [ "1", "2", "3", "4", "5", "6", "7" ],
+         		labels : [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ],
          		datasets : [
          			{
          				label: "Die letzten Messungen",
@@ -516,56 +518,56 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
          				pointStrokeColor : "#fff",
          				pointHighlightFill : "#fff",
          				pointHighlightStroke : "rgba(220,220,220,1)",
-         				data : [ 0, 0, 0, 0, 0, 0, 0 ]
+         				data : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
          			}
          		]
          	},
          	currentGraphIndex = 0,
          	absolutePathEntries;
-
-
+         
+         
          for ( var i = 0; i < valueButtons.length; i++ ) {
          	var elem = sym.getSymbol( selectorPrefix + valueButtons[ i ] );
-
+         
          	if ( i === 0 ) {
          		elem.$( 'Click_Area' )
          			.css( { pointerEvents: 'none' } );
          		elem.$( 'Btn_Background' )
          			.css( { backgroundColor: 'rgba(43,150,211,1.00)' } );
          	}
-
+         
          	elem.$( "Label" ).html( valueButtons[ i ] );
          }
-
+         
          function updateValue () {
          	var randomValue = parseInt( Math.random() * 200 );
          	sym.$("Value_Display").html( ( randomValue < 10 ? '00' + randomValue : ( randomValue < 100 ? '0' + randomValue : randomValue ) ) + ',' + ( commaValue < 10 ? '0' + commaValue : commaValue ) );
-
+         
          	chart.addData( [ randomValue ], absolutePathEntries );
          	chart.removeData();
-
+         
          	absolutePathEntries++;
          	commaValue += 5;
-
+         
          	if ( commaValue >= maxCommaValue ) {
          		commaValue = 0;
          	}
          }
-
+         
          function initGraph () {
          	chartElement.html( '<canvas id="value-graph" width="469" height="285"></canvas>' );
-
+         
          	var canvas = document.getElementById( 'value-graph' ),
          		ctx = canvas.getContext( '2d' );
-
+         
          	absolutePathEntries = lineChartData.datasets[ 0 ].data.length;
-
+         
          	chart = new Chart( ctx ).Line( lineChartData, {
          		responsive: true,
          		animationSteps: 10
          	} );
          }
-
+         
          initGraph();
          interval = setInterval( updateValue, 1000 );
 
